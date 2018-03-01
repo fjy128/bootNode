@@ -1,0 +1,61 @@
+/* 在这个文件中定义自己的样式 */
+body{
+    background:#ccc;
+}
+
+/* =============头部开始============= */
+header{
+    background:#222;
+}
+/* 模态框 */
+.modal-body span{
+        color:#ccc;
+        font-size:20px;
+        padding:8px 8px 2px 0px;  
+}
+.modal-body input{
+    border:none;
+    outline: none;
+    border-bottom:1px solid #ccc;
+    color:#ccc
+}
+.modal-body b{
+    display:inline-block;
+    padding:10px ;
+    background:#286090;
+    color:#fff;
+    border-radius:5px;
+    cursor:pointer
+}
+.modal-body b:hover{
+    background:#204d74;
+}
+
+.modal-footer b{
+    font-size:12px;
+    color:#ccc;
+}
+.modal-footer b:hover{
+    color:#204d74;
+    cursor:pointer;
+}
+
+/* =============头部结束============= */
+
+
+/* =============中心内容开始============= */
+/* =============中心内容结束============= */
+
+
+/* =============底部开始============= */
+.footer{
+    width:60px;
+    width:100%;
+    background-color:#222;
+    border:#101010 1px solid ;
+    color:#fff;
+    cursor: default;
+    line-height:60px;
+    text-align:center;
+}
+/* =============底部结束============= */
