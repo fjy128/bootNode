@@ -134,7 +134,7 @@
 </template>
 
 <script>
-
+ import '../static/plugins/bootstrap.min.js';
 export default {
   name: 'App',
   data(){
@@ -163,6 +163,8 @@ export default {
 </script>
 
 <style>
+ @import '/static/css/layout.css';
+ @import '/static/plugins/bootstrap.min.css';
 #app {
   min-width:700px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

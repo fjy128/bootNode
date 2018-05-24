@@ -4,11 +4,14 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import axios from 'axios';
+import $ from 'jquery';
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/js/bootstrap.min'
 // import 'jquery';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../static/css/layout.css';
+// import '@/bootstrap.min.css';
+// import '../static/css/layout.css'
 // import 'jquery/dist/jquery.js';
-import 'bootstrap/dist/js/bootstrap.min.js';
+// import '@/bootstrap.min.js';
 
 Vue.config.productionTip = false;
 Vue.prototype.$http = axios;
