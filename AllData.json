@@ -5,7 +5,7 @@
         "id":1,
         "title":"游戏专题设计",
         "pusDay":"8个月前发布",
-        "path":"/assets/indexList01.jpg",
+        "path":"/static/imgs/indexList01.jpg",
         "vised":2343,
         "pinglun":1450,
         "zan":890
@@ -14,7 +14,7 @@
         "id":2,
         "title":"（第一期）蝙蝠侠汽车合成",
         "pusDay":"2个月前发布",
-        "path":"/assets/indexList02.jpg",
+        "path":"/static/imgs/indexList02.jpg",
         "vised":645,
         "pinglun":145,
         "zan":189
@@ -23,7 +23,7 @@
         "id":3,
         "title":"新风尚",
         "pusDay":"9个月前发布",
-        "path":"/assets/indexList03.jpg",
+        "path":"/static/imgs/indexList03.jpg",
         "vised":8343,
         "pinglun":6346,
         "zan":935
@@ -32,7 +32,7 @@
         "id":4,
         "title":"网站中突出主要内容的5种方法",
         "pusDay":"1个月前发布",
-        "path":"/assets/indexList04.jpg",
+        "path":"/static/imgs/indexList04.jpg",
         "vised":343,
         "pinglun":45,
         "zan":89
@@ -41,7 +41,7 @@
         "id":4,
         "title":"去年的项目",
         "pusDay":"1年前发布",
-        "path":"/assets/indexList05.jpg",
+        "path":"/static/imgs/indexList05.jpg",
         "vised":15643,
         "pinglun":14500,
         "zan":8900
@@ -50,7 +50,7 @@
         "id":6,
         "title":"Interface Collection Part 04",
         "pusDay":"1月前发布",
-        "path":"/assets/indexList06.jpg",
+        "path":"/static/imgs/indexList06.jpg",
         "vised":890,
         "pinglun":124,
         "zan":546
@@ -59,7 +59,7 @@
         "id":7,
         "title":"春节回家抢票神器",
         "pusDay":"9月前发布",
-        "path":"/assets/indexList07.jpg",
+        "path":"/static/imgs/indexList07.jpg",
         "vised":934,
         "pinglun":445,
         "zan":789
@@ -68,7 +68,7 @@
         "id":8,
         "title":"有我就有你想去的世界",
         "pusDay":"5个月前发布",
-        "path":"/assets/indexList08.jpg",
+        "path":"/static/imgs/indexList08.jpg",
         "vised":543,
         "pinglun":124,
         "zan":243

@@ -73,6 +73,26 @@
             </div>
       </div>
 
+            <nav aria-label="Page navigation ">
+                <ul class="pagination pagination-lg navbar-right">
+                    <li>
+                    <a href="#" aria-label="Previous" style="margin-right:10px">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                    </li>
+                    <li class="active"><a style="margin-right:10px" href="#">1</a></li>
+                    <li><a style="margin-right:10px" href="#">2</a></li>
+                    <li><a style="margin-right:10px" href="#">3</a></li>
+                    <li><a style="margin-right:10px" href="#">4</a></li>
+                    <li><a style="margin-right:10px" href="#">5</a></li>
+                    <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                    </li>
+                </ul>
+            </nav>
+            
         <div class="container " id="footer-container">
             <div id="footer-newsletter">
                 <div class="newsletter-title">Join the One Page Love Newsletter and get a free eBook!</div>
@@ -92,6 +112,7 @@
                 </div>
             </div>
         </div>
+        
   </div>
 </template>
 
