@@ -29,12 +29,10 @@
                         </div>
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
+                            <i class="jiantou L_icon" aria-hidden="true"></i>
                         </a>
                         <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
+                            <i class="jiantou R_icon" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -70,9 +68,9 @@
             <span class="tit-icon icon-shizhan-r tit-icon-r"></span>								
         </h3>
         <div class="container " style="margin-top:20px" >
-              <div class="row">
-                    <div class="col-sm-4 col-md-3" v-for = "(item,index) in indexList" v-bind:key="index">
-                            <div class="thumbnail">
+              <div class="row ">
+                    <div class="col-sm-4 col-md-3 " v-for = "(item,index) in indexList" v-bind:key="index">
+                            <div class="thumbnail plugthumb">
                                 <img :src='item.path'/>
                                 <div class="caption">
                                      <router-link :to="{path:'/detail'}">
@@ -80,9 +78,9 @@
                                      </router-link>
                                     <p>{{item.pusDay}}</p>
                                     <div class="my_list_icon">
-                                        <i class="glyphicon glyphicon-eye-open"></i><span>{{item.vised}}</span>
-                                        <i class="glyphicon glyphicon-comment"></i><span>{{item.pinglun}}</span>
-                                        <i class="glyphicon glyphicon-thumbs-up"></i><span>{{item.zan}}</span>
+                                        <i class="_icon eye"></i><span>{{item.vised}}</span>
+                                        <i class="_icon comment"></i><span>{{item.pinglun}}</span>
+                                        <i class="_icon zan"></i><span>{{item.zan}}</span>
                                     </div>
                                 </div>
                             </div>                      
@@ -97,143 +95,61 @@
             <span class="tit-icon icon-new-r tit-icon-r"></span>								
         </h3>
         <div class="clearfix types-content container">
-            <div class="index-card-container  ">
-                <a target="_blank" class="course-card" href="//coding.imooc.com/class/218.html?mc_marking=c5a3de541d57c8b0f8adb42c41479892&amp;mc_channel=syb11" data-track="xshk-1-1">
-                    <div class="course-stat new">NEW</div>
+            <div class="index-card-container" v-for="item in SHcursomData" v-bind:key="item.id"> 
+                <a target="_blank" 
+                  :style="{textDecoration:'none'}"
+                  href="//coding.imooc.com/class/218.html?mc_marking=c5a3de541d57c8b0f8adb42c41479892&amp;mc_channel=syb11" 
+                  data-track="xshk-1-1">
+                    <div class="course-stat new" v-show="item.new">NEW</div>
                     <div class="course-card-top hashadow">
-                        <img class="course-banner" src="//img3.sycdn.imooc.com/szimg/5afbd8bf000175f805400300.jpg">
+                        <img class="course-banner" :src="item.picURL">
                         <div class="course-label">
-                            <label>Vue.js</label>
+                            <label v-for="subItem in item.label" >{{subItem}}</label>
                         </div>
 					</div>
                     <div class="course-card-content">
-                        <h3 class="course-card-name">全网首发mpvue课程小程序全栈开发</h3>
+                        <h3 class="course-card-name" :style="{marginTop:'5px'}">{{item.title}}</h3>
                         <div class="clearfix course-card-bottom">
                             <div class="course-card-info">
-                                <span>实战</span><span>中级</span><span><i class="icon-set_sns"></i>256</span>
+                                <span>{{item.type!=""?item.type:""}}</span>
+                                <span>{{item.level!=""?item.level:""}}</span>
+                                <span><i class="icon-set_sns"></i>人数:{{item.person}}</span>
                                 <span class="course-star-box">
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
+                                    <i class="icon-star2" v-for="n in item.start" ></i>
                                 </span>
                             </div>
-                            <div class="course-card-price">￥266.00</div>
+                            <div class="course-card-price">{{item.money>0?"￥"+item.money:"免费"}}</div>
                         </div>
                     </div>
-			</a>
-		</div>
-           <div class="index-card-container  ">
-                <a target="_blank" class="course-card" href="//coding.imooc.com/class/218.html?mc_marking=c5a3de541d57c8b0f8adb42c41479892&amp;mc_channel=syb11" data-track="xshk-1-1">
-                    <div class="course-stat new">NEW</div>
-                    <div class="course-card-top hashadow">
-                        <img class="course-banner" src="//img3.sycdn.imooc.com/szimg/5afbd8bf000175f805400300.jpg">
-                        <div class="course-label">
-                            <label>Vue.js</label>
-                        </div>
-					</div>
-                    <div class="course-card-content">
-                        <h3 class="course-card-name">全网首发mpvue课程小程序全栈开发</h3>
-                        <div class="clearfix course-card-bottom">
-                            <div class="course-card-info">
-                                <span>实战</span><span>中级</span><span><i class="icon-set_sns"></i>256</span>
-                                <span class="course-star-box">
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                </span>
-                            </div>
-                            <div class="course-card-price">￥266.00</div>
-                        </div>
-                    </div>
-			</a>
-		</div>
-           <div class="index-card-container  ">
-                <a target="_blank" class="course-card" href="//coding.imooc.com/class/218.html?mc_marking=c5a3de541d57c8b0f8adb42c41479892&amp;mc_channel=syb11" data-track="xshk-1-1">
-                    <div class="course-stat new">NEW</div>
-                    <div class="course-card-top hashadow">
-                        <img class="course-banner" src="//img3.sycdn.imooc.com/szimg/5afbd8bf000175f805400300.jpg">
-                        <div class="course-label">
-                            <label>Vue.js</label>
-                        </div>
-					</div>
-                    <div class="course-card-content">
-                        <h3 class="course-card-name">全网首发mpvue课程小程序全栈开发</h3>
-                        <div class="clearfix course-card-bottom">
-                            <div class="course-card-info">
-                                <span>实战</span><span>中级</span><span><i class="icon-set_sns"></i>256</span>
-                                <span class="course-star-box">
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                </span>
-                            </div>
-                            <div class="course-card-price">￥266.00</div>
-                        </div>
-                    </div>
-			</a>
-		</div>
-           <div class="index-card-container  ">
-                <a target="_blank" class="course-card" href="//coding.imooc.com/class/218.html?mc_marking=c5a3de541d57c8b0f8adb42c41479892&amp;mc_channel=syb11" data-track="xshk-1-1">
-                    <div class="course-stat new">NEW</div>
-                    <div class="course-card-top hashadow">
-                        <img class="course-banner" src="//img3.sycdn.imooc.com/szimg/5afbd8bf000175f805400300.jpg">
-                        <div class="course-label">
-                            <label>Vue.js</label>
-                        </div>
-					</div>
-                    <div class="course-card-content">
-                        <h3 class="course-card-name">全网首发mpvue课程小程序全栈开发</h3>
-                        <div class="clearfix course-card-bottom">
-                            <div class="course-card-info">
-                                <span>实战</span><span>中级</span><span><i class="icon-set_sns"></i>256</span>
-                                <span class="course-star-box">
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                </span>
-                            </div>
-                            <div class="course-card-price">￥266.00</div>
-                        </div>
-                    </div>
-			</a>
-		</div>
-           <div class="index-card-container  ">
-                <a target="_blank" class="course-card" href="//coding.imooc.com/class/218.html?mc_marking=c5a3de541d57c8b0f8adb42c41479892&amp;mc_channel=syb11" data-track="xshk-1-1">
-                    <div class="course-stat new">NEW</div>
-                    <div class="course-card-top hashadow">
-                        <img class="course-banner" src="//img3.sycdn.imooc.com/szimg/5afbd8bf000175f805400300.jpg">
-                        <div class="course-label">
-                            <label>Vue.js</label>
-                        </div>
-					</div>
-                    <div class="course-card-content">
-                        <h3 class="course-card-name">全网首发mpvue课程小程序全栈开发</h3>
-                        <div class="clearfix course-card-bottom">
-                            <div class="course-card-info">
-                                <span>实战</span><span>中级</span><span><i class="icon-set_sns"></i>256</span>
-                                <span class="course-star-box">
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                    <i class="icon-star2 on"></i>
-                                </span>
-                            </div>
-                            <div class="course-card-price">￥266.00</div>
-                        </div>
-                    </div>
-			</a>
-		</div>
+			    </a>
+		    </div>
         </div>
-        
+         <!-- 精／彩／手／记／及／猿／问 -->
+       <h3 class="types-title">			
+            <span class="tit-icon icon-art-l tit-icon-l">
+                </span><em>精</em>／<em>彩</em>／<em>手</em>／<em>记</em>／<em>及</em>／<em>猿</em>／<em>问</em>
+            <span class="tit-icon icon-art-r tit-icon-r"></span>		
+       </h3>
+       <div class="container">
+            <ul class="wonderful-list js-wonderful-list types-content" :style="{height:'1565px'}">
+                <dd class="item" :id="'Apes_ask'+Math.random()" style="left: 390px; top: 0px;">				
+                    <label class="article-label blue"><i class="icon-blog"></i>手记文章</label>
+                    <div class="clearfix article-tit">
+                        <a href="/article/30727" target="_blank" class="big-tit l hasimg">美团点评智能支付核心交易系统的可用性实践</a>	
+                        <img class="r" 
+                            src="//img1.sycdn.imooc.com/5b0659cb0001f06c10540514-210-130.jpg" 
+                            data-original="//img1.sycdn.imooc.com/5b0659cb0001f06c10540514-210-130.jpg">									
+                    </div>				
+                    <div>					
+                        <p class="article-content">背景 每个系统都有它最核心的指标。比如在收单领域：进件系统第一重要的是保证入件准确，第二重要的是保证上单效率。清结算系统第一重要的是保证准确打款，第二重要的是保证及时打款。我们负责的系统是美团点评智能支付的核心链路，承担着智能支付100%的流量，内部习惯称为核心交易。因为涉及美团点评所有线下交易商家、用户之间的资金流转，对于核心交易来说：第一重要的是稳定性，第二重要的还是稳定性。 问题引发 作为一...</p>
+                        <div class="bottom-info clearfix">
+                            <span>浏览 596</span><span>推荐 9</span>
+                            <a href="/article/30727" target="_blank" class="r blue">阅读全文<i class="icon-right"></i></a>
+                        </div>				
+                    </div>			
+                </dd>
+            </ul>
+       </div>
     <!-- ============中间部分结束============== -->
 
   </div>
@@ -246,14 +162,16 @@
 
 
 import axios from 'axios';
+// import wookmark from 'wookmark';
 // import $ from 'jquery';
 export default {
   name: 'App',
   data(){
     return{
-        bannerData:[],
-        recommendData:[],
-        indexList:[],
+        bannerData:[],//banner数据
+        recommendData:[],//右边栏热门推荐数据
+        indexList:[],//实战推荐数据
+        SHcursomData:[],//新上好课数据
         shadom:{
             borderRadius:"5px",
             boxShadow:" 0 12px 24px 0 rgba(7,17,27,0.2)"
@@ -264,7 +182,17 @@ export default {
       //调用
       this.getGoodsList();
       this.getBanner();
-      this.getrecommend()
+      this.getrecommend();
+      this.getShcursom();
+    // var handler = $('.item');
+    //     handler.wookmark({
+    //     // Prepare layout options.
+    //     autoResize: true, // This will auto-update the layout when the browser window is resized.
+    //    // container: $('#main'), // Optional, used for some extra CSS styling
+    //     offset: 5, // Optional, the distance between grid items
+    //     outerOffset: 10, // Optional, the distance to the containers border
+    //     itemWidth: 210 // Optional, the width of a grid item
+    //     })
     },
     methods: {
             //文章列表
@@ -296,6 +224,17 @@ export default {
         getrecommend(){
             axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/recommend').then((res) => {
                 this.recommendData=res.data
+            })
+        },
+         //获取上好课程
+        getShcursom(){
+            axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/hkcourse').then((res) => {
+                if(res.status==200&&res.data&&res.data.length){
+                    this.SHcursomData=res.data;
+                    console.log(res.data)
+                }else{
+                    console.log("暂无数据")
+                }
             })
         },
        //获取时间格式

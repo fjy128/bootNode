@@ -1,0 +1,37 @@
+/* 
+图标映入文件
+ */
+
+
+/* 搜索 */
+._icon{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    margin-top:3px;
+}
+.search{
+    background:url('../imgs/search.png') no-repeat;
+     background-size:16px 16px;
+}
+/* banner按钮 */
+.jiantou{
+    display:inline-block;
+    width:32px;
+    height:32px;
+    margin-top: 160px;
+}
+.L_icon{
+    background:url('../imgs/jiantouL.png') no-repeat;
+    background-Size:32px 32px;
+}
+.R_icon{
+    background:url('../imgs/jiantouR.png') no-repeat;
+    background-Size:32px 32px;
+}
+/* 眼睛 */
+.eye{background:url('../imgs/eye.png')no-repeat center 2px;}
+/* 评论 */
+.comment{background:url('../imgs/pinglun.png')no-repeat center 2px;}
+/* 点赞 */
+.zan{background:url('../imgs/zan.png')no-repeat center 1px;}

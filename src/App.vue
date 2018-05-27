@@ -20,7 +20,7 @@
             
                 <div class="collapse navbar-collapse" role="navigation" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li v-for="(item,index) in titleList">
+                    <li v-for="(item,index) in titleList" :key="index">
                         <router-link :to="{path:item.url}">{{item.title}}</router-link>
                     </li>
                     <li class="dropdown">
@@ -36,7 +36,7 @@
                             <input type="text" class="form-control" placeholder="搜索">
                             </div>
                             <button type="submit">
-                                <span class="glyphicon glyphicon-search"></span>
+                                <i class="_icon search"></i>
                             </button>
                     </form>
                 <ul class="nav navbar-nav navbar-right">
@@ -163,6 +163,7 @@ export default {
 
 <style>
  @import '/static/css/layout.css';
+ @import '/static/css/icon.css';
  @import '/static/plugins/bootstrap.min.css';
 #app {
   min-width:700px;

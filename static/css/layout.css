@@ -62,6 +62,36 @@ header{
 /* =============底部结束============= */
 
 /*实／战／推／荐*/
+.plugthumb {
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+}
+.plugthumb:before {
+    background: url(../imgs/shadow-right.png) bottom center no-repeat; 
+    content: '';
+    display: block;
+    width: 100px;
+    height: 15px;
+    position: absolute;
+    bottom: 11px;
+    right: 10px;
+    z-index: -20;
+    /* margin-bottom: 40px; */
+    /* box-shadow: 0 0 4px rgba(0, 0, 0, 1); */
+}
+.plugthumb:after {
+    clear: both;
+     background: url(../imgs/shadow-left.png) bottom center no-repeat; 
+    content: '';
+    display: block;
+    width: 100px;
+    height: 15px;
+    position: absolute;
+    bottom: 11px;
+    left: 5px;
+    z-index: -20;
+    /* box-shadow: 0 0 4px rgba(0, 0, 0, 1); */
+}
 .types-title{
     margin-top:40px;
     position: relative;
@@ -95,6 +125,8 @@ em{
 .icon-shizhan-r{background-position: center -36px;}
 .icon-new-l{background-position: center -72px;}
 .icon-new-r{background-position: center -108px;}
+.icon-art-l{background-position: center -360px;}
+.icon-art-r { background-position: center -396px;}
 /*新／上／好／课*/
 .types-content{
     margin-top: 24px;
@@ -104,14 +136,18 @@ em{
     float: left;
     margin-left: 18px;
     border-radius: 4px;
-    margin-bottom: 12px;
+    margin-bottom: 35px;
     width: 205px;
     height: 252px;
     position: relative;
     transition: .3s all linear;
 }
-a{ color: #1c1f21;}
-a:link { text-decoration: none;}
+.index-card-container:hover{
+    border-radius: 5px; 
+    box-shadow: rgba(7, 17, 27, 0.2) 0px 12px 24px 0px;
+}
+a{ color: #1c1f21;text-decoration:none}
+a:link,#course-card a:hover{ color:'#f00'}
 .course-stat {
     position: absolute;
     border: 2px solid #FFF;
@@ -129,9 +165,10 @@ a:link { text-decoration: none;}
     background: #FF6C00;
 }
 .course-card-top {
-    width: 216px;
+    width: 205px;
     height: 120px;
     position: relative;
+    padding:0 2px;
     border-radius: 8px;
     transition: all .3s;
 }
@@ -168,7 +205,7 @@ a:link { text-decoration: none;}
 .course-card-content .course-card-name {
     font-size: 16px;
     color: #07111B;
-    line-height: 24px;
+    line-height: 20px;
     word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -187,22 +224,93 @@ a:link { text-decoration: none;}
 }
 .course-card-info span {
     display: inline-block;
-    margin-right: 12px;
+    margin-right: 5px;
 }
 .course-card-info .course-star-box {
     color: rgba(255,153,0,.4);
     margin-right: 0;
 }
-.course-star-box .on {
+.course-star-box {
     color: #f90;
+    margin-right: 0;
+    height: 16px;
+    display: inline-block;
 }
 .icon-star2 {
-    font-family: icomoon!important;
-    font-style: normal;
+   background:url('../imgs/starton.png') ;
+   background-size:7px 7px;
+   background-repeat:no-repeat;
+   display: inline-block;
+   width: 7px;
+   height: 7px;
+}
+ /* <!-- 精／彩／手／记／及／猿／问 --> */
+ .container-types .types-content {
+    margin-top: 24px;
+    margin-left: -18px;
+}
+.wonderful-list {
+    margin-left: 0!important;
+    width: 1152px;
+    min-height: 560px;
+    position: relative;
+}
+.wonderful-list .item {
+    position: absolute;
+    padding: 24px 32px 32px;
+    width: 372px;
+    box-sizing: border-box;
+    background: #FFF;
+    box-shadow: 0 4px 8px 0 rgba(7,17,27,.05);
+    border-radius: 8px;
+    transition: all .3s;
+    margin-right: 18px;
+    margin-bottom: 18px;
+}
+.container-types {
+    line-height: 16px;
+    margin-bottom: 8px;
+    display: inline-block;
+    font-size: 12px;
+}
+.item .blue {
+    color: rgba(0,140,200,.6);
+}
+.big-tit{
+    width: 230px;
+    font-size: 16px;
+    color: #07111B;
+    line-height: 24px;
+    transition: all .3s;
+}
+.l {
+    float: left;
+}
+.article-tit img{
+    width: 72px;
+    height: 48px;
+}
+.article-content {
+    font-size: 12px;
+    color: #4D555D;
+    line-height: 24px;
+    text-align: justify;
+    word-break: break-all;
     font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+}
+.article-content {
+    margin-top: 8px;
+}
+.bottom-info {
+    font-size: 12px;
+    color: #93999F;
+    line-height: 24px;
+    margin-top: 12px;
+    font-weight: 400;
+}
+.bottom-info span {
+    margin-right: 24px;
+}
+.bottom-info a {
+    transition: all .3s;
 }
