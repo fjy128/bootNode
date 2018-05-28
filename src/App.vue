@@ -122,7 +122,7 @@
 
 
     <!-- ============底部开始============== -->
-     <div class="footer " style="margin-top:30px">
+     <div class="footer " >
             Copyright 2011~2017 Shanghai Big Data Inc. All Rights Reserved
       </div>
     <!-- ============底部结束============== -->

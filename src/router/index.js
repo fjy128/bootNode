@@ -5,7 +5,11 @@ import Layout from '@/components/layout';//首页
 import CenterNum from '@/components/centerNum';//数据中心
 import Detail from '@/components/detail';//详情
 import Produce from '@/components/produce';//产品
-import Info from '@/components/info'
+import Info from '@/components/info';
+var infiniteScroll =  require('vue-infinite-scroll');
+// var vueWaterfallEasy = require('vue-waterfall-easy')
+Vue.use(infiniteScroll);
+// Vue.use(vueWaterfallEasy);
 
 Vue.use(Router)//注册
 

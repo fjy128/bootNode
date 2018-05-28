@@ -62,6 +62,7 @@
      </div>
 
       <!-- 实／战／推／荐 -->
+       <div style="background:#f8fafc;padding: 10px 0 0;margin-top:20px">
         <h3 class="types-title">				
             <span class="tit-icon icon-shizhan-l tit-icon-l"></span>
             <em>实</em>／<em>战</em>／<em>推</em>／<em>荐</em>
@@ -71,7 +72,7 @@
               <div class="row ">
                     <div class="col-sm-4 col-md-3 " v-for = "(item,index) in indexList" v-bind:key="index">
                             <div class="thumbnail plugthumb">
-                                <img :src='item.path'/>
+                                <div class="showPic"><img :src='item.path'/></div>
                                 <div class="caption">
                                      <router-link :to="{path:'/detail'}">
                                         <h5>{{item.title}}</h5>
@@ -87,6 +88,8 @@
                     </div>
                 </div>    
         </div>
+       </div>
+       
 
        <!-- 新／上／好／课 -->
         <h3 class="types-title">				
@@ -114,9 +117,10 @@
                                 <span>{{item.type!=""?item.type:""}}</span>
                                 <span>{{item.level!=""?item.level:""}}</span>
                                 <span><i class="icon-set_sns"></i>人数:{{item.person}}</span>
-                                <span class="course-star-box">
+                                <div>
+                                    <span>好评指数:</span>
                                     <i class="icon-star2" v-for="n in item.start" ></i>
-                                </span>
+                                </div>
                             </div>
                             <div class="course-card-price">{{item.money>0?"￥"+item.money:"免费"}}</div>
                         </div>
@@ -125,31 +129,37 @@
 		    </div>
         </div>
          <!-- 精／彩／手／记／及／猿／问 -->
-       <h3 class="types-title">			
+         <div style="background:#f8fafc;padding: 10px 0 0;">
+            <h3 class="types-title">			
             <span class="tit-icon icon-art-l tit-icon-l">
                 </span><em>精</em>／<em>彩</em>／<em>手</em>／<em>记</em>／<em>及</em>／<em>猿</em>／<em>问</em>
             <span class="tit-icon icon-art-r tit-icon-r"></span>		
-       </h3>
-       <div class="container">
-            <ul class="wonderful-list js-wonderful-list types-content" :style="{height:'1565px'}">
-                <dd class="item" :id="'Apes_ask'+Math.random()" style="left: 390px; top: 0px;">				
-                    <label class="article-label blue"><i class="icon-blog"></i>手记文章</label>
-                    <div class="clearfix article-tit">
-                        <a href="/article/30727" target="_blank" class="big-tit l hasimg">美团点评智能支付核心交易系统的可用性实践</a>	
-                        <img class="r" 
-                            src="//img1.sycdn.imooc.com/5b0659cb0001f06c10540514-210-130.jpg" 
-                            data-original="//img1.sycdn.imooc.com/5b0659cb0001f06c10540514-210-130.jpg">									
-                    </div>				
-                    <div>					
-                        <p class="article-content">背景 每个系统都有它最核心的指标。比如在收单领域：进件系统第一重要的是保证入件准确，第二重要的是保证上单效率。清结算系统第一重要的是保证准确打款，第二重要的是保证及时打款。我们负责的系统是美团点评智能支付的核心链路，承担着智能支付100%的流量，内部习惯称为核心交易。因为涉及美团点评所有线下交易商家、用户之间的资金流转，对于核心交易来说：第一重要的是稳定性，第二重要的还是稳定性。 问题引发 作为一...</p>
-                        <div class="bottom-info clearfix">
-                            <span>浏览 596</span><span>推荐 9</span>
-                            <a href="/article/30727" target="_blank" class="r blue">阅读全文<i class="icon-right"></i></a>
+            </h3>
+            <div class="container">
+                <ul 
+                    v-infinite-scroll="loadMore" 
+                    infinite-scroll-disabled="busy" 
+                    infinite-scroll-distance="10"
+                    class="wonderful-list types-content" >
+                    <dd class="item" v-for="item in data" :key="item.id">				
+                        <label class="article-label blue"><i class="icon-blog"></i>手记文章</label>
+                        <div class="clearfix article-tit">
+                            <a href="/article/30727" target="_blank" class="big-tit l hasimg">{{item.title}}</a>	
+                                                    
                         </div>				
-                    </div>			
-                </dd>
-            </ul>
-       </div>
+                        <div>					
+                            <p class="article-content">{{item.content}}</p>
+                            <div class="bottom-info clearfix">
+                                <span>浏览 {{item.viewnum}}</span><span>推荐 {{item.recommend}}</span>
+                                <a href="/article/30727" target="_blank" class="r blue">阅读全文<i class="icon-right"></i></a>
+                            </div>				
+                        </div>			
+                    </dd>
+                </ul>
+            </div>
+         </div>
+      
+       
     <!-- ============中间部分结束============== -->
 
   </div>
@@ -162,12 +172,16 @@
 
 
 import axios from 'axios';
-// import wookmark from 'wookmark';
-// import $ from 'jquery';
+// import apesAsk   from './Apes_ask'
 export default {
+
   name: 'App',
+//   components: {
+//         apesAsk
+//   },
   data(){
     return{
+        // imgsArr:[],//猿问
         bannerData:[],//banner数据
         recommendData:[],//右边栏热门推荐数据
         indexList:[],//实战推荐数据
@@ -175,7 +189,9 @@ export default {
         shadom:{
             borderRadius:"5px",
             boxShadow:" 0 12px 24px 0 rgba(7,17,27,0.2)"
-            }
+            },   
+            busy: false,   
+            data: [],
     }
   },
   mounted () {
@@ -184,15 +200,7 @@ export default {
       this.getBanner();
       this.getrecommend();
       this.getShcursom();
-    // var handler = $('.item');
-    //     handler.wookmark({
-    //     // Prepare layout options.
-    //     autoResize: true, // This will auto-update the layout when the browser window is resized.
-    //    // container: $('#main'), // Optional, used for some extra CSS styling
-    //     offset: 5, // Optional, the distance between grid items
-    //     outerOffset: 10, // Optional, the distance to the containers border
-    //     itemWidth: 210 // Optional, the width of a grid item
-    //     })
+
     },
     methods: {
             //文章列表
@@ -231,12 +239,80 @@ export default {
             axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/hkcourse').then((res) => {
                 if(res.status==200&&res.data&&res.data.length){
                     this.SHcursomData=res.data;
-                    console.log(res.data)
                 }else{
                     console.log("暂无数据")
                 }
             })
         },
+
+        loadMore() {
+           if(this.data.length>0){
+               this.busy=true
+           }else{
+                axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/question').then((res) => {
+                    if(res.status==200&&res.data&&res.data.length){
+                        this.data=res.data;
+                        console.log(res.data)
+                    }
+                }).then(()=>{
+                    var $item = $('.wonderful-list .item');
+                    var len =$item.length 
+                    var aHeight = {L:[],C:[],R:[]}
+                    for(let i=0;i<len;i++){
+                        var iNow = i%3;
+                        switch(iNow){
+                            case 0:
+                            $($item[i]).css({left:'15px'});
+                             aHeight.L.push( $($item[i]).height());
+                            var step = Math.floor(i/3);
+                            if(!step){
+                                  $($item[i]).css({top:'0'});
+                            }
+                            else{
+                                var sum = 0;
+                                for(var j=0;j<step;j++){
+                                    sum += aHeight.L[j] + 15;
+                                }
+                                $($item[i]).css({top:sum + 'px'});
+                            }
+                            break;
+                            case 1:
+                            $($item[i]).css({left:(348+30)+'px'});
+                            aHeight.C.push( $($item[i]).height());
+                            var step = Math.floor(i/3);
+                            if(!step){
+                                  $($item[i]).css({top:'0'});
+                            }
+                            else{
+                                var sum = 0;
+                                for(var j=0;j<step;j++){
+                                    sum += aHeight.C[j] + 15;
+                                }
+                                $($item[i]).css({top:sum + 'px'});
+                            }
+                            break;
+                             case 2:
+                            $($item[i]).css({left:(2*348+45)+'px'});
+                            aHeight.R.push( $($item[i]).height());
+                            var step = Math.floor(i/3);
+                            if(!step){
+                                  $($item[i]).css({top:'0'});
+                            }
+                            else{
+                                var sum = 0;
+                                for(var j=0;j<step;j++){
+                                    sum += aHeight.R[j] + 15;
+                                }
+                                $($item[i]).css({top:sum + 'px'});
+                            }
+                            break;
+                        }
+                    }
+                })
+           }            
+        },
+     
+   
        //获取时间格式
        getStyleTime(uptime){
             let time =uptime*1000;
@@ -264,6 +340,9 @@ export default {
             }
             return timeSpanStr;
        }
+    },
+    created(){
+      
     }
 }
 </script>
