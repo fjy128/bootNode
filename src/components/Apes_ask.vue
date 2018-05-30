@@ -23,6 +23,7 @@
 </template>
 <script >
 import infiniteScroll from 'vue-infinite-scroll';
+import axios from 'axios';
 export default {
     components: {
         infiniteScroll
@@ -33,7 +34,7 @@ export default {
         data: [],
       }
     },
-    method:{
+    methods:{
 
         loadMore() {
            if(this.data.length>0){
@@ -42,7 +43,6 @@ export default {
                 axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/question').then((res) => {
                     if(res.status==200&&res.data&&res.data.length){
                         this.data=res.data;
-                        console.log(res.data)
                     }
                 }).then(()=>{
                     var $item = $('.wonderful-list .item');
