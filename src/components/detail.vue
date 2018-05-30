@@ -5,7 +5,7 @@
             <div class="wvHead clearfix">
                 <div class="wvUser fr">
                     <div class="clearfix">
-                        <a href="##" class="fl relative" target="_blank"><img src="../assets/detailicon.png" height="62" width="62" class="radius100"></a>
+                        <a href="##" class="fl relative" target="_blank"><img src="" height="62" width="62" class="radius100"></a>
                         <div class="workName">
                             <p><a href="/10685" target="_blank" class="c_394a58 f18" title="XNVISION">XNVISION</a></p>
                             16粉丝 / 0关注
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="container detail" style="margin-top:30px">
-            <img class="container" src="../assets/Detaillong.jpg"/>
+            <img class="container" src=""/>
         </div>
     </div>
     <!-- =========详情页中间部分========== -->
