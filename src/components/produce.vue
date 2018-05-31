@@ -5,12 +5,12 @@
           <div v-if="childMsg!=''" class="archive-header-info">
                 <div class="archive-title">
                     <span class="grey-shadow">
-                        <h1>The following are the classifications</h1>
+                        <h1>The following are the classifications👇</h1>
                     </span>
                 </div>
                 <div class="archive-description">
                     <span class="grey-shadow">
-                        {{childMsg}} 🎉 
+                       ✨🚀🐢🎉 {{childMsg}} 🎉🐢🚀✨
                     </span>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                     <div class="thumbnail plugthumb" style="margin-top:30px">
                         <div class="showPic"><img :src='item.path'/></div>
                         <div class="caption">
-                                <router-link :to="{path:'/detail'}">
+                                <router-link :to="{path:'/detail/'+item.id}">
                                 <h5 :style="ellip" :title="item.title">{{item.title}}</h5>
                                 </router-link>
                             <p>{{item.pusDay}}</p>

@@ -1,9 +1,6 @@
 
 <template>
    <ul 
-      v-infinite-scroll="loadMore" 
-      infinite-scroll-disabled="busy" 
-      infinite-scroll-distance="10"
       class="wonderful-list types-content" >
       <dd class="item" v-for="item in data" :key="item.id">				
           <label class="article-label blue"><i class="icon-blog"></i>手记文章</label>
@@ -22,25 +19,23 @@
   </ul>
 </template>
 <script >
-import infiniteScroll from 'vue-infinite-scroll';
+
 import axios from 'axios';
 export default {
     components: {
-        infiniteScroll
     },
     data(){
-      return{
-        busy: false,   
+      return{ 
         data: [],
       }
+    },
+    created(){
+        this.loadMore()
     },
     methods:{
 
         loadMore() {
-           if(this.data.length>0){
-               this.busy=true
-           }else{
-                axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/question').then((res) => {
+       axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/question').then((res) => {
                     if(res.status==200&&res.data&&res.data.length){
                         this.data=res.data;
                     }
@@ -98,8 +93,7 @@ export default {
                             break;
                         }
                     }
-                })
-           }            
+                })           
         },
     }
 

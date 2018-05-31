@@ -35,3 +35,34 @@
 .comment{background:url('../imgs/pinglun.png')no-repeat center 2px;}
 /* 点赞 */
 .zan{background:url('../imgs/zan.png')no-repeat center 1px;}
+/* 登录注册 */
+.sign{
+    display:inline-block;
+    width:25px;
+    height:25px;
+    margin-right:10px;
+}
+.user{
+    background:url('../imgs/user.png')no-repeat center 1px;
+    background-Size:25px 25px;
+}
+.passWord{
+    background:url('../imgs/hk_password.png')no-repeat center 1px;
+    background-Size:25px 25px;
+}
+.passWord_again{
+    background:url('../imgs/password.png')no-repeat center 1px;
+    background-Size:25px 25px;
+}
+.email{
+    background:url('../imgs/email.png')no-repeat center 1px;
+    background-Size:25px 25px;
+}
+.userName{
+    background:url('../imgs/person.png')no-repeat center 1px;
+    background-Size:25px 25px;
+}
+.sex{
+    background:url('../imgs/ico-sex.png')no-repeat center 1px;
+    background-Size:25px 25px;
+}

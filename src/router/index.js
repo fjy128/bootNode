@@ -1,15 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-// import HelloWorld from '@/components/HelloWorld';
 import Layout from '@/components/layout';//首页
-import CenterNum from '@/components/centerNum';//数据中心
+import CenterNum from '@/components/Community';//社区
 import Detail from '@/components/detail';//详情
 import Produce from '@/components/produce';//产品
 import Info from '@/components/info';
 var infiniteScroll =  require('vue-infinite-scroll');
-// var vueWaterfallEasy = require('vue-waterfall-easy')
 Vue.use(infiniteScroll);
-// Vue.use(vueWaterfallEasy);
 
 Vue.use(Router)//注册
 
@@ -22,7 +19,7 @@ export default new Router({
       component:Layout
     },
     {
-      path: '/centerNum',
+      path: '/Community',
       component:CenterNum
     }, 
     {
@@ -34,7 +31,7 @@ export default new Router({
       component:Info
     }, 
     {
-      path: '/detail',
+      path: '/detail/:id',
       component:Detail
     }
   ]

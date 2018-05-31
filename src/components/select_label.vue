@@ -12,7 +12,7 @@
 
     <div class="col-md-1" :style="{lineHeight:'45px',fontWeight:'600',marginTop:'10px'}">分类：</div>
     <div :class="['col-md-1',ClassIndex==item.id?'act':'','tabLabel']" 
-         @click="changeClassTab(item.id,item.dies)"
+         @click="changeClassTab(item.id,item.dies,item.kind)"
          :style="{lineHeight:'45px',textAlign:'center',marginTop:'10px',cursor:'pointer'}"  
          v-for="(item,index) in direIndex=='0'?classData:selectClassData" 
          :key="'class'+index" >{{item.name}}</div>
@@ -59,11 +59,12 @@ export default {
               }
           }
       },
-      changeClassTab(id,dies){
+      changeClassTab(id,dies,kind){
+         
           this.ClassIndex=id;
           var die=null;
           id=='0'? die='':die=dies;
-          this.$emit('child-msg',die)
+          this.$emit('child-msg',die);
       }
      
     }

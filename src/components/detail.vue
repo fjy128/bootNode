@@ -1,14 +1,16 @@
 <template>
-    <div>
+    <div style="min-height:500px">
         <div class="container" style="margin-top:30px;">
             <!-- =========详情页头部=========== -->
-            <div class="wvHead clearfix">
+            <div class="wvHead clearfix" >
                 <div class="wvUser fr">
                     <div class="clearfix">
-                        <a href="##" class="fl relative" target="_blank"><img src="" height="62" width="62" class="radius100"></a>
+                        <a  href="javascript:;"  class="fl relative" target="_blank">
+                            <img  height="62" width="62" class="radius100" :src="detailData.path">
+                        </a>
                         <div class="workName">
-                            <p><a href="/10685" target="_blank" class="c_394a58 f18" title="XNVISION">XNVISION</a></p>
-                            16粉丝 / 0关注
+                            <p><a href="/10685" target="_blank" class="c_394a58 f18" :title="detailData.autor">{{detailData.autor}}</a></p>
+                            {{detailData.vised}}粉丝 / {{detailData.zan}}关注
                         </div>
                     </div>
                     <div class="mt10 relative">
@@ -17,15 +19,18 @@
                     </div>
                 </div>
                 <div class="p20">
-                    <h2 class="c_38485a f24">游戏专题设计</h2>
-                    <p class="c_8f98aa f12 mt10">作品分类：&nbsp;&nbsp;<a href="/Works/index/parentcatid/5/recommend/2" class="c_4095cc">游戏界面</a>&nbsp;&nbsp;<a href="javascript:;" class="c_4095cc"></a>&nbsp;&nbsp;&nbsp;&nbsp;发布时间：<span class="c_4095cc">2017-04-28</span></p>
-                    <div class="mt10 c_8f98aa f12">
-                        <span class="materialIcon"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;4534</span>
-                        <span class="materialIcon"><i class="glyphicon glyphicon-comment"></i>&nbsp;0</span>
-                        <span class="materialIcon"><i class="glyphicon glyphicon-thumbs-up"></i>&nbsp;0</span>
+                    <h2 class="c_38485a f24">{{detailData.title}}</h2>
+                    <p class="c_8f98aa f12 mt10">
+                        <span>作品分类：</span><a  class="c_4095cc">{{detailData.style}}</a>
+                        <span class="c_4095cc">发布时间：</span><a  class="c_4095cc">{{detailData.pusDay}}</a>  
+                    </p>
+                    <div class="mt10 c_ccc f12">
+                        <i class="_icon eye"></i><span>{{detailData.vised}}</span>
+                        <i class="_icon comment"></i><span>{{detailData.pinglun}}</span>
+                        <i class="_icon zan"></i><span>{{detailData.zan}}</span>
                         © 版权&nbsp;
                         <span class="relative">
-                            <img src="" class="mtf3">&nbsp;<a href="javascript:;" class="inform">举报</a>
+                            <img src="" class="mtf3">&nbsp;<a href="javascript:;" class="c_ccc">举报</a>
                         </span>
                     </div>
                 </div>
@@ -39,8 +44,27 @@
   
 </template>
 <script>
-import Vue from "vue";
-export default{};
+import axios from 'axios';
+
+export default{
+
+      data(){
+        return{
+            detailData:{},
+        }
+    },
+      created(){
+        this.getDetail();
+    },
+    methods:{
+        getDetail(){
+            axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/produceList/'+this.$route.params.id).then((res)=>{
+                this.detailData=res.data;
+            })
+        }
+    },
+
+};
 </script>
 
 <style scoped>
@@ -82,6 +106,12 @@ font-style:normal;
 }
 .c_4095cc, a.c_4095cc, .c_4095cc a {
     color: #4095cc;
+}
+.c_ccc{
+    color:#ccc
+}
+span{
+    margin-right:5px
 }
 .wvHead {
     background-color: #fafafa;
