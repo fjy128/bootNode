@@ -22,7 +22,7 @@
 
 </template>
 <script >
-import axios from 'axios';
+
 export default {
   
     data(){
@@ -40,7 +40,7 @@ export default {
     },
     methods:{
       getlabel(){
-        axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/produce').then((res) => {
+        this.$axios.get(this.$url+'/banner/produce').then((res) => {
             if(res.status==200&&res.data&&res.data.length>0){
                 this.direData=res.data[0].direData;
                 this.classData=res.data[0].classData;

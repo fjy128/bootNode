@@ -44,7 +44,7 @@
   
 </template>
 <script>
-import axios from 'axios';
+
 
 export default{
 
@@ -58,7 +58,7 @@ export default{
     },
     methods:{
         getDetail(){
-            axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/produceList/'+this.$route.params.id).then((res)=>{
+           this.$axios.get(this.$url+'/banner/produceList/'+this.$route.params.id).then((res)=>{
                 this.detailData=res.data;
             })
         }

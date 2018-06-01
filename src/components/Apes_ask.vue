@@ -1,4 +1,4 @@
-
+//  首页--精／彩／手／记／及／猿／问 
 <template>
    <ul 
       class="wonderful-list types-content" >
@@ -20,7 +20,7 @@
 </template>
 <script >
 
-import axios from 'axios';
+
 export default {
     components: {
     },
@@ -35,7 +35,7 @@ export default {
     methods:{
 
         loadMore() {
-       axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/question').then((res) => {
+       this.$axios.get(this.$url+'/banner/question').then((res) => {
                     if(res.status==200&&res.data&&res.data.length){
                         this.data=res.data;
                     }

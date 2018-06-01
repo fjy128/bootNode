@@ -66,7 +66,7 @@
 
 <script >
 import selectLabel from './select_label';
-import axios from 'axios';
+
 
 export default { 
       components: {
@@ -94,7 +94,7 @@ export default {
     },
      methods: {
         getListData(){
-            axios.get('http://5b076a5892b3b4001425a067.mockapi.io/api/banner/produceList').then((res) => {
+           this.$axios.get(this.$url+'/banner/produceList').then((res) => {
                 console.log(res)
                 if(res.status==200&&res.data&&res.data.length>0){
                     this.listAllData=res.data;

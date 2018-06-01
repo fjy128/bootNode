@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Layout from '@/components/layout';//首页
-import CenterNum from '@/components/Community';//社区
+import Community from '@/components/Community';//社区
 import Detail from '@/components/detail';//详情
 import Produce from '@/components/produce';//产品
 import Info from '@/components/info';
@@ -20,7 +20,7 @@ export default new Router({
     },
     {
       path: '/Community',
-      component:CenterNum
+      component:Community
     }, 
     {
       path: '/produce',
