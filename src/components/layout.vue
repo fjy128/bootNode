@@ -43,10 +43,10 @@
 
 <script>
 
-import banner from './banner';//banner
-import recommend from './SZ_recommen';//实战推荐
-import cursom from './SH_cursom';//新上好课
-import apesAsk   from './Apes_ask';//猿问手记
+import banner from './index/banner';//banner
+import recommend from './index/SZ_recommen';//实战推荐
+import cursom from './index/SH_cursom';//新上好课
+import apesAsk   from './index/Apes_ask';//猿问手记
 export default {
 
   name: 'App',

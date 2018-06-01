@@ -5,7 +5,7 @@
           <div v-if="childMsg!=''" class="archive-header-info">
                 <div class="archive-title">
                     <span class="grey-shadow">
-                        <h1>The following are the classifications👇</h1>
+                        <h1 style="text-align:center">The following are the classifications👇</h1>
                     </span>
                 </div>
                 <div class="archive-description">
@@ -58,14 +58,12 @@
             </nav>
       </div>
 
-            
-
         
   </div>
 </template>
 
 <script >
-import selectLabel from './select_label';
+import selectLabel from './produce/select_label';
 
 
 export default { 
@@ -116,62 +114,57 @@ export default {
    
 }
 </script>
-<style scoped>
+<style scoped  lang="scss">
 @media (max-width: 840px){ 
-.archive-header-info .archive-title,.archive-header-info .archive-description {
-    max-width: none;
+    .archive-header-info  {
+        .archive-description {
+            max-width: none;
+        }
+        .archive-title {
+            max-width: none;
+            font-size: 2.625rem;
+            line-height: 2.625rem;
+            margin-bottom: .625rem;
+            letter-spacing: -2px;
+            max-width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+            h1{
+                text-align:center;
+            }
+        }
+    
+    }
 }
-}
-.archive-header-info .archive-title {
-    font-size: 2.625rem;
-    line-height: 2.625rem;
-    margin-bottom: .625rem;
-    letter-spacing: -2px;
-    max-width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-}
-.archive-header-info .archive-title {
 
-    font-size: 2.625rem;
-    line-height: 2.625rem;
-    margin-bottom: .625rem;
-    letter-spacing: -2px;
-    max-width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-}
-.archive-header-info .archive-title h1{
-    text-align:center;
-}
 @media (max-width: 1430px){
-.archive-header-info .archive-description {
-    max-width: 80%;
-}
-}
- .archive-header-info .archive-description {
-    font-family: -apple-system,BlinkMacSystemFont,Arial,Helvetica Neue,Helvetica,sans-serif;
-    color: #777;
-    max-width: 60%;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    letter-spacing: -0.2px;
+    .archive-header-info .archive-description {
+        .archive-description {
+            max-width: 80%;
+            font-family: -apple-system,BlinkMacSystemFont,Arial,Helvetica Neue,Helvetica,sans-serif;
+            color: #777;
+            max-width: 60%;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1.25rem;
+            line-height: 1.5rem;
+            letter-spacing: -0.2px;
+        }
+    }
 }
 
 .my_list_icon{
     padding:9px;
-}
-.my_list_icon i{
-  font-style:normal;
-  color:#ccc;
-  padding:3px;
-}
-.my_list_icon span{
-  font-style:normal;
-  color:#ccc;
-  margin-right:15px;
+    i{
+        font-style:normal;
+        color:#ccc;
+        padding:3px;
+    }
+    span{
+        font-style:normal;
+        color:#ccc;
+        margin-right:15px;
+    }
 }
 
 </style>
