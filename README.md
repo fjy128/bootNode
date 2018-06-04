@@ -157,14 +157,6 @@ const webpack = require('webpack');
 <p><a href="https://github.com/doodlewind/vue-cmap    ">https://github.com/doodlewind/vue-cmap    </a> vue-cmap-Vue China map可视化组件</p>
 <p><a href="https://github.com/steven5538/vue-button  ">https://github.com/steven5538/vue-button  </a> vue-button-Vue按钮组件</p>
 
-
-
-
-
-
-
-
-
 开发框架
 
 https://github.com/vuejs/vue" vue.js-流行的轻量高效的前端组件化方案
@@ -308,3 +300,152 @@ https://github.com/NetanelBasal/vue-generate-component" vue-generate-component-�
 https://github.com/xwpongithub/vue-multipage-cli" vue-multipage-cli-简单的多页CLI
 
 https://github.com/MetinSeylan/VuejsStarterKit" VuejsStarterKit-vuejs starter套件
+
+实际开发案例
+应用实例 https://github.com/phanan/koel" koel-基于网络的个人音频流媒体服务
+
+https://github.com/pagekit/pagekit" pagekit-轻量级的CMS建站系统
+
+https://github.com/Vuedo/vuedo" vuedo-博客平台
+
+https://github.com/jackhutu/jackblog-vue" jackblog-vue-个人博客系统
+
+https://github.com/lzxb/vue-cnode" vue-cnode-重写vue版cnode社区
+
+https://github.com/ycwalker/CMS-of-Blog" CMS-of-Blog-博客内容管理器
+
+https://github.com/mrgodhani/rss-reader" rss-reader-简单的rss阅读器
+
+https://github.com/viko16/vue-ghpages-blog" vue-ghpages-blog-依赖GitHub Pages无需本地生成的静态博客
+
+https://github.com/wh469012917/swoole-vue-webim" swoole-vue-webim-Web版的聊天应用
+
+https://github.com/thelinuxlich/vue-dashing-js" vue-dashing-js-nuvo-dashing-js的fork
+
+https://github.com/sapjax/fewords" fewords-功能极其简单的笔记本
+
+https://github.com/surmon-china/vue-blog" vue-blog-使用Vue2.0 和Vuex的vue-blog
+
+Demo示例 https://github.com/shinygang/Vue-cnodejs" Vue-cnodejs-基于vue重写Cnodejs.org的webapp
+
+https://github.com/javaSwing/NeteaseCloudWebApp" NeteaseCloudWebApp-高仿网易云音乐的webapp
+
+https://github.com/hilongjw/vue-zhihu-daily" vue-zhihu-daily-知乎日报 with Vuejs
+
+https://github.com/useryangtao/vue-wechat" vue-wechat-vue.js开发微信app界面
+
+https://github.com/lzxb/vue2-demo" vue2-demo-从零构建vue2 + vue-router + vuex 开发环境
+
+https://github.com/liangxiaojuan/eleme" eleme-高仿饿了么app商家详情
+
+https://github.com/kenberkeley/vue-demo" vue-demo-vue简易留言板
+
+https://github.com/zhengguorong/maizuo" maizuo-vue/vuex/redux仿卖座网
+
+https://github.com/codecasts/spa-starter-kit" spa-starter-kit-单页应用启动套件
+
+https://github.com/Sioxas/vue-music" vue-music-Vue 音乐搜索播放
+
+https://github.com/jiakeqi/douban" douban-模仿豆瓣前端
+
+https://github.com/liangxiaojuan/vue-Meizi" vue-Meizi-vue最新实战项目
+
+https://github.com/yatessss/zhihudaily-vue" zhihudaily-vue-知乎日报web版
+
+https://github.com/lavyun/vue-demo-kugou" vue-demo-kugou-vuejs仿写酷狗音乐webapp
+
+https://github.com/SimonZhangITer/VueDemoSellEleme" VueDemoSellEleme-Vue2高仿饿了么外卖平台
+
+https://github.com/canfoo/vue2.0-taopiaopiao" vue2.0-taopiaopiao-vue2.0与express构建淘票票页面
+
+https://github.com/jiangjiu/vue-leancloud-blog" vue-leancloud-blog-一个前后端完全分离的单页应用
+
+https://github.com/yjj5855/node-vue-server-webpack" node-vue-server-webpack-Node.js+Vue.js+webpack快速开发框架
+
+https://github.com/wendaosanshou/mi-by-vue" mi-by-vue-VueJS仿小米官网
+
+https://github.com/okoala/vue-fis3" vue-fis3-流行开源工具集成demo
+
+https://github.com/superman66/vue2.x-douban" vue2.x-douban-Vue2实现简易豆瓣电影webApp
+
+https://github.com/ChuckCZC/vue-demo-maizuo" vue-demo-maizuo-使用Vue2全家桶仿制卖座电影
+
+https://github.com/iHaPBoy/vue-zhihudaily" vue-zhihudaily-知乎日报 Web 版本
+
+https://github.com/liujians/vue-adminLte-vue-router" vue-adminLte-vue-router-vue和adminLte整合应用
+
+https://github.com/superman66/vue-axios-github" vue-axios-github-登录拦截登出功能
+
+https://github.com/pomelo-chuan/Zhihu-Daily-Vue.js" Zhihu-Daily-Vue.js-Vuejs单页网页应用
+
+https://github.com/rokups/hello-vue-django" hello-vue-django-使用带有Django的vuejs的样板项目
+
+https://github.com/wszgxa/vue-cnode" vue-cnode-vue单页应用demo
+
+https://github.com/CommanderXL/x-blog" x-blog-开源的个人blog项目
+
+https://github.com/xrr2016/vue-express-mongodb" vue-express-mongodb-简单的前后端分离案例
+
+https://github.com/secreter/websocketchat" websocketchat-基于vue和websocket的多人在线聊天室
+
+https://github.com/beidan/photoShare" photoShare-基于图片分享的社交平台
+
+https://github.com/cs1707/vue-zhihudaily-2.0" vue-zhihudaily-2.0-使用Vue2.0+vue-router+vuex创建的zhihudaily
+
+https://github.com/lin-xin/notepad" notepad-本地存储的记事本
+
+https://github.com/elva2596/vueBlog" vueBlog-前后端分离博客
+
+https://github.com/hql123/vue-ruby-china" vue-ruby-china-VueJS框架搭建的rubychina平台
+
+https://github.com/littlewin-wang/ZhihuDaily" ZhihuDaily-基于Vue和Nodejs的Web单页应用
+
+https://github.com/Molunerfinn/vue-koa-demo" vue-koa-demo-使用Vue2和Koa1的全栈demo
+
+https://github.com/vincentSea/vue2.x-Cnode" vue2.x-Cnode-基于vue全家桶的Cnode社区
+
+https://github.com/shaqihe/life-app-vue" life-app-vue-使用vue2完成多功能集合到小webapp
+
+https://github.com/SidKwok/github-explorer" github-explorer-寻找最有趣的GitHub库
+
+https://github.com/wenye123/vue-trip" vue-trip-vue2做的出行webapp
+
+https://github.com/albertchan/vue-ssr-boilerplate" vue-ssr-boilerplate-精简版的ofvue-hackernews-2
+
+https://github.com/nswbmw/vue-bushishiren" vue-bushishiren-不是诗人应用
+
+https://github.com/peng1992/houtai" houtai-基于vue和Element的后台管理系统
+
+https://github.com/QRL909109/ios7-vue" ios7-vue-使用vue2.0 vue-router vuex模拟ios7
+
+https://github.com/tyllo/Framework7-VueJS" Framework7-VueJS-使用移动框架的示例
+
+https://github.com/BubblyPoker/cnode-vue" cnode-vue-基于vue和vue-router构建的cnodejs web网站SPA
+
+https://github.com/zhoou/vue-cli-multipage-bootstrap" vue-cli-multipage-bootstrap-将vue官方在线示例整合到组件中
+
+https://github.com/jiananle/vue-cnode" vue-cnode-用 Vue 做的 CNode 官网
+
+https://github.com/GitaiQAQ/HyaReader" HyaReader-移动友好的阅读器
+
+https://github.com/xrr2016/zhihu-daily" zhihu-daily-轻松查看知乎日报内容
+
+https://github.com/Alex-xd/seeMusic" seeMusic-跨平台云音乐播放器
+
+https://github.com/Damonlw/vue-cnode" vue-cnode-使用cNode社区提供的接口
+
+https://github.com/moonou/zhihu-daily-vue" zhihu-daily-vue-知乎日报
+
+https://github.com/sailengsi/sls-vuex2-demo" sls-vuex2-demo-vuex2商城购物车demo
+
+https://github.com/ITCNZ/vue-dropload" vue-dropload-用以测试下拉加载与简单路由
+
+https://github.com/soulcm/vue-cnode-mobile" vue-cnode-mobile-搭建cnode社区
+
+https://github.com/fishenal/Vuejs-SalePlatform" Vuejs-SalePlatform-vuejs搭建的售卖平台demo
+
+https://github.com/Halfeld/v-notes" v-notes-简单美观的记事本
+
+https://github.com/BosNaufal/vue-starter" vue-starter-VueJs项目的简单启动页
+
+https://github.com/youknowznm/vue-memo" vue-memo-用 vue写的记事本应用
