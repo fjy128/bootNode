@@ -1,11 +1,14 @@
 <template>
-    <div role="tabpanel" class="tab-pane" id="profile">
-            <p>用户入驻状态</p>
-            <a @click='addItem'>添加</a>
+
+   <div role="tabpanel" class="tab-pane" id="profile">
+      <add-edit :showedit="!show_tab_pane" v-on:fnshowedit="fnshowedit" v-on:newuser="newuser"></add-edit>
+       <div v-show="show_tab_pane">
+                <p style="margin:20px 0 20px 0"> <a @click='addItem' href="javascript:;">添加</a></p>
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th><input type="checkbox" v-model="myV"/>&nbsp;全部</th>
+                        <th></th>
                         <th>用户名字</th>
                         <th>联系方式</th>
                         <th>邮箱</th>
@@ -16,13 +19,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for = "(item,index) in domList" :key="index" >
-                        <td><input type="checkbox" :checked='checked'  />&nbsp;&nbsp;&nbsp;{{index}}</td>
+                    <tr v-for = "(item,index) in spliceData" :key="index" >
+                        <td><input type="checkbox" :checked='checked'  />&nbsp;&nbsp;&nbsp;</td>
+                        <td ><img class="userPic" :src="item.img"/></td>
                         <td>{{item.name}}</td>
                         <td>{{item.phone}}</td>
                         <td>{{item.emil}}</td>
                         <td>{{item.money}}</td>
-                        <td v-if="parseInt(item.pro)>85">
+                        <td v-if="parseInt(item.pro)>80">
                         <div class="progress">
                             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" :style='"width:"+item.pro+"%"'>
                                 <span class="sr-only">{{item.pro}}</span>
@@ -36,204 +40,86 @@
                             </div>
                         </div>
                     </td>
-                        <td v-if="item.state"><button type="button" class="btn btn-success">intall</button></td>
+                        <td v-if="!item.state"><button type="button" class="btn btn-success">intall</button></td>
                         <td v-else><button type="button" class="btn btn-default  active" disabled="disabled">intalled</button></td>
-                        <td><a href="##" @click='removeItem(index)'>删除</a></td>
+                        <td><a href="javascript:;" @click='removeItem(index)'>删除</a></td>
                     </tr> 
                 </tbody>
         </table>
             <nav aria-label="Page navigation" class="navbar-right tabBar">
             <ul class="pagination">
-                <li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-                </li>
+                  <li :class="pageIndex==n?'active':''"
+                         v-for="n in pageLen" 
+                         :key="n"
+                         @click="tabPage(n)">
+                        <a style="margin-right:10px" href="javascript:;">{{n}}</a>
+                    </li>
             </ul>
             </nav>
-    </div>
+       </div>
+      
+       </div>
+    
 </template>
 <script>
 import Vue from "vue";
+import addEdit from './addEdit';
 export default{
+      components: {
+      addEdit
+    },
     data(){
         return {
             myV:'',
             checked:false,
-        domList:[
-                {
-                name:'sunmmer',
-                phone:'15766759389',
-                emil:'hellp@gam.com',
-                money:'$7546',
-                state:false,
-                pro:'75'
-            },
-            {
-                name:'jhonny',
-                phone:'15768759389',
-                emil:'boot@gam.com',
-                money:'$8546',
-                state:true,
-                 pro:'85'
-            },
-             {
-                name:'jean',
-                phone:'15985459389',
-                emil:'hellphoe@gam.com',
-                money:'$8596',
-                state:false,
-                pro:'76'
-            },
-             {
-                name:'justic',
-                phone:'15256859389',
-                emil:'1234fjy@gam.com',
-                money:'$9546',
-                state:true,
-                pro:'95'
-            },
-             {
-                name:'Ricky',
-                phone:'15229059389',
-                emil:'fjy127@gam.com',
-                money:'$10546',
-                state:true,
-                pro:'98'
-             },
-              {
-                name:'Marco',
-                phone:'15222759389',
-                emil:'hellp@gam.com',
-                money:'$7546',
-                state:true,
-                pro:'75'
-            },
-              {
-                name:'sunmmer',
-                phone:'15766759389',
-                emil:'hellp@gam.com',
-                money:'$7546',
-                state:true,
-                pro:'75'
-            },
-            {
-                name:'jhonny',
-                phone:'15768759389',
-                emil:'boot@gam.com',
-                money:'$8546',
-                state:true,
-                pro:'85'
-            },
-             {
-                name:'jean',
-                phone:'15985459389',
-                emil:'hellphoe@gam.com',
-                money:'$8596',
-                state:true,
-                pro:'87'
-            }
-            ],
-        addList:
-            [
-                {
-                name:'sunmmer',
-                phone:'15766759389',
-                emil:'hellp@gam.com',
-                money:'$7546',
-                state:false,
-                pro:'75'
-                },
-                {
-                    name:'jhonny',
-                    phone:'15768759389',
-                    emil:'boot@gam.com',
-                    money:'$8546',
-                    state:true,
-                    pro:'85'
-                },
-                {
-                    name:'jean',
-                    phone:'15985459389',
-                    emil:'hellphoe@gam.com',
-                    money:'$8596',
-                    state:false,
-                    pro:'76'
-                },
-                {
-                    name:'justic',
-                    phone:'15256859389',
-                    emil:'1234fjy@gam.com',
-                    money:'$9546',
-                    state:true,
-                    pro:'95'
-                },
-                {
-                    name:'Ricky',
-                    phone:'15229059389',
-                    emil:'fjy127@gam.com',
-                    money:'$10546',
-                    state:true,
-                    pro:'98'
-                },
-                {
-                    name:'Marco',
-                    phone:'15222759389',
-                    emil:'hellp@gam.com',
-                    money:'$7546',
-                    state:true,
-                    pro:'75'
-                },
-                {
-                    name:'sunmmer',
-                    phone:'15766759389',
-                    emil:'hellp@gam.com',
-                    money:'$7546',
-                    state:true,
-                    pro:'75'
-                },
-                {
-                    name:'jhonny',
-                    phone:'15768759389',
-                    emil:'boot@gam.com',
-                    money:'$8546',
-                    state:true,
-                    pro:'85'
-                },
-                {
-                    name:'jean',
-                    phone:'15985459389',
-                    emil:'hellphoe@gam.com',
-                    money:'$8596',
-                    state:true,
-                    pro:'87'
-                }
-            ]
-        ,
-        count:0
+            domList:[],//请求全部数据
+            spliceData:[],//分页数据
+            pageLen:1,//页数中长度
+            pageIndex:1,//页数下标
+            show_tab_pane:true,//显示隐藏模板
+
         }
     },
+    created(){
+        this.getData();
+    },
     methods:{
-        removeItem(index){
-            console.log(index)
-            this.domList.splice(index,1)
-            Vue.set(this.domList)
+        getData(){
+             this.$axios.get(this.$url+'/banner/entryuser').then((res)=>{
+                    if(res.status==200){
+                      if(res.data&&res.data.length>0){
+                          this.domList=res.data;
+                           this.pageLen=res.data.length/10;
+                           this.spliceData=this.domList.slice(0,10)
+                      }else{
+                          alert('抱歉，数据控暂无数据')
+                      }
+                  }else{
+                      alet('请求发生错误，请检查服务器')
+                  }
+            })
         },
+         //切换页数
+        tabPage(page){
+           this.pageIndex=page;
+           this.spliceData= this.domList.slice((page-1)*10,10*page);
+        },
+        //移除操作
+        removeItem(index){
+            this.spliceData.splice(index,1)
+            Vue.set(this.spliceData)
+        },
+        //添加操作
         addItem(){
-            if(this.count<this.addList.length){
-                this.domList.push(this.addList[this.count])
-                this.count++;
-            }
+            this.show_tab_pane=false;
+        },
+        //获取子组件取消时传递过来的值
+        fnshowedit(msg){
+            this.show_tab_pane=msg;
+        },
+        newuser(msg){
+            console.log(msg)
+            this.spliceData.unshift(msg)
         }
     },
     watch:{
@@ -244,32 +130,25 @@ export default{
 };
 </script>
 
-<style scoped>
-.my_container{
-    background:#fff;
-    margin-top:20px;
-    padding-top:20px;
-    padding-bottom:10px;
-    margin-bottom:20px;
-}
-p{
-    /* font-size:25px; */
- 
-    padding:15px 0;
-
-}
-table th{
-       text-align:center; 
-}
+<style lang="scss" scoped>
 table{
     margin-top:30px;
     text-align:center;
+    th{
+       text-align:center; 
+    }
+    tr:nth-child(odd){background:#f2f6f9;}
+    tr:nth-child(even){background:#e4eaf1;}
+    .userPic{
+        width:30px;
+        height:30px;
+        border-radius:50%;
+    }
 }
-table tr:nth-child(odd){background:#f2f6f9;}
-table tr:nth-child(even){background:#e4eaf1;}
 .tabBar{
     margin-right:0px;
 }
+
 </style>
 
 

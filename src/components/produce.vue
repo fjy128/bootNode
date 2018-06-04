@@ -8,7 +8,7 @@
                         <h1 style="text-align:center">The following are the classifications👇</h1>
                     </span>
                 </div>
-                <div class="archive-description">
+                <div class="archive-description" style="text-align:center">
                     <span class="grey-shadow">
                        ✨🚀🐢🎉 {{childMsg}} 🎉🐢🚀✨
                     </span>
@@ -37,22 +37,11 @@
 
             <nav aria-label="Page navigation ">
                 <ul class="pagination pagination-lg navbar-right">
-                    <li>
-                        <a href="#" aria-label="Previous" style="margin-right:10px">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
                     <li :class="pageIndex==n?'active':''"
                          v-for="n in pageNum" 
                          :key="n"
                          @click="tabPage(n)">
                         <a style="margin-right:10px" href="#">{{n}}</a>
-                    </li>
-              
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
                     </li>
                 </ul>
             </nav>
@@ -93,7 +82,6 @@ export default {
      methods: {
         getListData(){
            this.$axios.get(this.$url+'/banner/produceList').then((res) => {
-                console.log(res)
                 if(res.status==200&&res.data&&res.data.length>0){
                     this.listAllData=res.data;
                     this.pageNum=res.data.length/8;
