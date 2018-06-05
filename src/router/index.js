@@ -5,8 +5,8 @@ import Community from '@/components/Community';//社区
 import Detail from '@/components/detail';//详情
 import Produce from '@/components/produce';//产品
 import Info from '@/components/info';
-var infiniteScroll =  require('vue-infinite-scroll');
-Vue.use(infiniteScroll);
+
+
 
 Vue.use(Router)//注册
 
